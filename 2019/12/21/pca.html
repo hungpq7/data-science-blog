@@ -10,8 +10,8 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="There are many tutorials on PCA, but this one has interactive 3D graphs!" />
 <meta property="og:description" content="There are many tutorials on PCA, but this one has interactive 3D graphs!" />
-<link rel="canonical" href="https://hungpq7.github.io/data-science-blog/2019/12/21/PCA-From-Scratch.html" />
-<meta property="og:url" content="https://hungpq7.github.io/data-science-blog/2019/12/21/PCA-From-Scratch.html" />
+<link rel="canonical" href="https://hungpq7.github.io/data-science-blog/2019/12/21/pca.html" />
+<meta property="og:url" content="https://hungpq7.github.io/data-science-blog/2019/12/21/pca.html" />
 <meta property="og:site_name" content="Data Science Blog" />
 <meta property="og:image" content="https://i.imgur.com/vKiH8As.png" />
 <meta property="og:type" content="article" />
@@ -20,7 +20,7 @@
 <meta property="twitter:image" content="https://i.imgur.com/vKiH8As.png" />
 <meta property="twitter:title" content="Principal Component Analysis (PCA) from Scratch" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2019-12-21T00:00:00-06:00","datePublished":"2019-12-21T00:00:00-06:00","description":"There are many tutorials on PCA, but this one has interactive 3D graphs!","headline":"Principal Component Analysis (PCA) from Scratch","image":"https://i.imgur.com/vKiH8As.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://hungpq7.github.io/data-science-blog/2019/12/21/PCA-From-Scratch.html"},"url":"https://hungpq7.github.io/data-science-blog/2019/12/21/PCA-From-Scratch.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2019-12-21T00:00:00-06:00","datePublished":"2019-12-21T00:00:00-06:00","description":"There are many tutorials on PCA, but this one has interactive 3D graphs!","headline":"Principal Component Analysis (PCA) from Scratch","image":"https://i.imgur.com/vKiH8As.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://hungpq7.github.io/data-science-blog/2019/12/21/pca.html"},"url":"https://hungpq7.github.io/data-science-blog/2019/12/21/pca.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/data-science-blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://hungpq7.github.io/data-science-blog/feed.xml" title="Data Science Blog" /><link rel="shortcut icon" type="image/x-icon" href="/data-science-blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -110,24 +110,24 @@ window.onload = wrap_img;
         <div class="pb-5 d-flex flex-justify-center">
           <div class="px-2">
 
-    <a href="https://github.com/hungpq7/data-science-blog/tree/master/_notebooks/2019-12-21-PCA-From-Scratch.ipynb" role="button" target="_blank">
+    <a href="https://github.com/hungpq7/data-science-blog/tree/master/_notebooks/2019-12-21-pca.ipynb" role="button" target="_blank">
 <img class="notebook-badge-image" src="/data-science-blog/assets/badges/github.svg" alt="View On GitHub">
     </a>
 </div>
 
           <div class="px-2">
-    <a href="https://mybinder.org/v2/gh/hungpq7/data-science-blog/master?filepath=_notebooks%2F2019-12-21-PCA-From-Scratch.ipynb" target="_blank">
+    <a href="https://mybinder.org/v2/gh/hungpq7/data-science-blog/master?filepath=_notebooks%2F2019-12-21-pca.ipynb" target="_blank">
         <img class="notebook-badge-image" src="/data-science-blog/assets/badges/binder.svg" alt="Open In Binder"/>
     </a>
 </div>
 
           <div class="px-2">
-    <a href="https://colab.research.google.com/github/hungpq7/data-science-blog/blob/master/_notebooks/2019-12-21-PCA-From-Scratch.ipynb" target="_blank">
+    <a href="https://colab.research.google.com/github/hungpq7/data-science-blog/blob/master/_notebooks/2019-12-21-pca.ipynb" target="_blank">
         <img class="notebook-badge-image" src="/data-science-blog/assets/badges/colab.svg" alt="Open In Colab"/>
     </a>
 </div>
           <div class="px-2">
-  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fhungpq7%2Fdata-science-blog%2Fblob%2Fmaster%2F_notebooks%2F2019-12-21-PCA-From-Scratch.ipynb" target="_blank">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fhungpq7%2Fdata-science-blog%2Fblob%2Fmaster%2F_notebooks%2F2019-12-21-pca.ipynb" target="_blank">
       <img class="notebook-badge-image" src="/data-science-blog/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
   </a>
 </div>
@@ -190,7 +190,7 @@ window.onload = wrap_img;
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
-# file to edit: _notebooks/2019-12-21-PCA-From-Scratch.ipynb
+# file to edit: _notebooks/2019-12-21-pca.ipynb
 -->
 
 <div class="container" id="notebook-container">
@@ -2441,7 +2441,7 @@ $k=7$, I got 97.7% accuracy.   The highest I ever got it was 99%, but that was r
         theme="github-light"
         crossorigin="anonymous"
         async>
-</script><a class="u-url" href="/data-science-blog/2019/12/21/PCA-From-Scratch.html" hidden></a>
+</script><a class="u-url" href="/data-science-blog/2019/12/21/pca.html" hidden></a>
 </article>
 
       </div>
