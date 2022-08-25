@@ -1879,11 +1879,11 @@ This wonderful property is the foundation of famous PCA (Principle Components An
 </h3>
 <p>Diagonalization is the process of transform a square matrix to a diagonal matrix so that it retains the main properties. By performing eigendecomposition, we are diagonalizing $\mathbf{A}$ into $\mathbf{D}$. Let's analyze the situation to understand how $\mathbf{D}$ shares the same characteristics with $\mathbf{A}$.</p>
 $$
-\begin{align}
+\begin{aligned}
     \mathbf{Ax} &amp;= \mathbf{y} \\
     \Leftrightarrow\mathbf{Q}\mathbf{D}\mathbf{Q}^{-1}\mathbf{x} &amp;= \mathbf{y} \\
     \Leftrightarrow\mathbf{D}\left(\mathbf{Q}^{-1}\mathbf{x}\right) &amp;= \left(\mathbf{Q}^{-1}\mathbf{y}\right)
-\end{align}
+\end{aligned}
 $$<p>In the first equation, $\mathbf{y}$ is the image of $\mathbf{x}$ in the new coordinates system proposed by $\mathbf{A}$. In the third equation, notice that both $\mathbf{x}$ and $\mathbf{y}$ are transformed in the same way. We can conclude that $\mathbf{D}$ represents the simplest form of $\mathbf{A}$ that requires less entries ($N$ instead of $N^2$).</p>
 
 </div>
@@ -2055,12 +2055,12 @@ $$\mathbf{A}=\mathbf{U}\mathbf{S}\mathbf{V}^{\text{T}}$$
 $$\mathbf{U}\mathbf{U}^{\text{T}}=\mathbf{U}\mathbf{U}^{-1}=\mathbf{I}$$
 </p>
 <p>$\mathbf{A}\mathbf{A}^{\text{T}}$ and $\mathbf{A}^{\text{T}}\mathbf{A}$ in fact share the same set of positive eigenvalues. It turns out, their square roots are the singular values which lies on the diagonal of $\mathbf{S}$. This relationship can be expressed using the eigendecomposition of either $\mathbf{A}\mathbf{A}^{\text{T}}$ or $\mathbf{A}^{\text{T}}\mathbf{A}$:</p>
-$$\begin{align*}
+$$\begin{aligned}
 \mathbf{A}\mathbf{A}^{\text{T}}
 &amp;= \left(\mathbf{U}\mathbf{S}\mathbf{V}^{\text{T}}\right)\left(\mathbf{U}\mathbf{S}\mathbf{V}^{\text{T}}\right)^{\text{T}} \\
 &amp;= \mathbf{U}\mathbf{S}\mathbf{V}^{\text{T}}\mathbf{V}\mathbf{S}^{\text{T}}\mathbf{U}^{\text{T}} \\
 &amp;= \mathbf{U}(\mathbf{S}\mathbf{S}^{\text{T}})\mathbf{U}^{-1} \\
-\end{align*}$$<p>As $\mathbf{S}$ is a diagonal matrix, to calculate $\mathbf{S}\mathbf{S}^{\text{T}}$ we only need to square the elements on the diagonal of $\mathbf{S}$. In other words, squaring singular values of $\mathbf{A}$ gives us the eigenvalues of $\mathbf{A}\mathbf{A}^{\text{T}}$.</p>
+\end{aligned}$$<p>As $\mathbf{S}$ is a diagonal matrix, to calculate $\mathbf{S}\mathbf{S}^{\text{T}}$ we only need to square the elements on the diagonal of $\mathbf{S}$. In other words, squaring singular values of $\mathbf{A}$ gives us the eigenvalues of $\mathbf{A}\mathbf{A}^{\text{T}}$.</p>
 
 </div>
 </div>
