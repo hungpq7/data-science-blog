@@ -52,6 +52,8 @@ $dt-green-light: rgb(172, 229, 145);
 }
 .input_area pre {
     border-left: 1px solid lightcoral;
+    padding-bottom:0.1px !important;
+    padding-top:0.1px !important;
 }
 .output_area pre {
     border-left: 1px solid grey;
