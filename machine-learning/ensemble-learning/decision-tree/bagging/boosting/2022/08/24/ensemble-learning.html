@@ -11,15 +11,15 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="A overview of Ensemble Learning methods." />
 <meta property="og:description" content="A overview of Ensemble Learning methods." />
-<link rel="canonical" href="https://hungpq7.github.io/data-science-blog/jupyter/machine-learning/ensemble-learning/decision-tree/bagging/boosting/stacking/2022/08/24/ensemble-learning.html" />
-<meta property="og:url" content="https://hungpq7.github.io/data-science-blog/jupyter/machine-learning/ensemble-learning/decision-tree/bagging/boosting/stacking/2022/08/24/ensemble-learning.html" />
+<link rel="canonical" href="https://hungpq7.github.io/data-science-blog/machine-learning/ensemble-learning/decision-tree/bagging/boosting/2022/08/24/ensemble-learning.html" />
+<meta property="og:url" content="https://hungpq7.github.io/data-science-blog/machine-learning/ensemble-learning/decision-tree/bagging/boosting/2022/08/24/ensemble-learning.html" />
 <meta property="og:site_name" content="Data Science Blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-08-24T00:00:00-05:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Ensemble Learning" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Quang Hung & Thuy Linh"},"dateModified":"2022-08-24T00:00:00-05:00","datePublished":"2022-08-24T00:00:00-05:00","description":"A overview of Ensemble Learning methods.","headline":"Ensemble Learning","mainEntityOfPage":{"@type":"WebPage","@id":"https://hungpq7.github.io/data-science-blog/jupyter/machine-learning/ensemble-learning/decision-tree/bagging/boosting/stacking/2022/08/24/ensemble-learning.html"},"url":"https://hungpq7.github.io/data-science-blog/jupyter/machine-learning/ensemble-learning/decision-tree/bagging/boosting/stacking/2022/08/24/ensemble-learning.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Quang Hung & Thuy Linh"},"dateModified":"2022-08-24T00:00:00-05:00","datePublished":"2022-08-24T00:00:00-05:00","description":"A overview of Ensemble Learning methods.","headline":"Ensemble Learning","mainEntityOfPage":{"@type":"WebPage","@id":"https://hungpq7.github.io/data-science-blog/machine-learning/ensemble-learning/decision-tree/bagging/boosting/2022/08/24/ensemble-learning.html"},"url":"https://hungpq7.github.io/data-science-blog/machine-learning/ensemble-learning/decision-tree/bagging/boosting/2022/08/24/ensemble-learning.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/data-science-blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://hungpq7.github.io/data-science-blog/feed.xml" title="Data Science Blog" /><link rel="shortcut icon" type="image/x-icon" href="/data-science-blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -105,9 +105,6 @@ window.onload = wrap_img;
     
       <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
       
-        <a class="category-tags-link" href="/data-science-blog/categories/#jupyter">jupyter</a>
-        &nbsp;
-      
         <a class="category-tags-link" href="/data-science-blog/categories/#machine-learning">machine-learning</a>
         &nbsp;
       
@@ -121,9 +118,6 @@ window.onload = wrap_img;
         &nbsp;
       
         <a class="category-tags-link" href="/data-science-blog/categories/#boosting">boosting</a>
-        &nbsp;
-      
-        <a class="category-tags-link" href="/data-science-blog/categories/#stacking">stacking</a>
         
       
       </p>
@@ -161,40 +155,35 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
-<li class="toc-entry toc-h1"><a href="#1.-Overview">1. Overview </a>
+<li class="toc-entry toc-h2"><a href="#1.-Overview">1. Overview </a>
 <ul>
-<li class="toc-entry toc-h2"><a href="#1.1.-Big-picture">1.1. Big picture </a></li>
-<li class="toc-entry toc-h2"><a href="#1.2.-Bias-variance-analysis">1.2. Bias-variance analysis </a></li>
+<li class="toc-entry toc-h3"><a href="#Big-picture">Big picture </a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h1"><a href="#2.-Stacking">2. Stacking </a>
+<li class="toc-entry toc-h2"><a href="#2.-Stacking">2. Stacking </a>
 <ul>
-<li class="toc-entry toc-h2"><a href="#2.1.-Voting">2.1. Voting </a></li>
-<li class="toc-entry toc-h2"><a href="#2.2.-Stacking">2.2. Stacking </a></li>
-<li class="toc-entry toc-h2"><a href="#2.3.-Blending">2.3. Blending </a></li>
+<li class="toc-entry toc-h3"><a href="#Voting">Voting </a></li>
+<li class="toc-entry toc-h3"><a href="#Stacking">Stacking </a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h1"><a href="#3.-Bagging">3. Bagging </a>
+<li class="toc-entry toc-h2"><a href="#3.-Bagging">3. Bagging </a>
 <ul>
-<li class="toc-entry toc-h2"><a href="#3.1.-Random-Forest">3.1. Random Forest </a></li>
-<li class="toc-entry toc-h2"><a href="#3.2.-Extra-Trees">3.2. Extra Trees </a></li>
-<li class="toc-entry toc-h2"><a href="#3.3.-Implementation">3.3. Implementation </a></li>
+<li class="toc-entry toc-h3"><a href="#Random-Forest">Random Forest </a></li>
+<li class="toc-entry toc-h3"><a href="#Extra-Trees">Extra Trees </a></li>
+<li class="toc-entry toc-h3"><a href="#Implementation">Implementation </a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h1"><a href="#4.-Boosting">4. Boosting </a>
-<ul>
-<li class="toc-entry toc-h2"><a href="#4.1.-Adaptive-Boosting">4.1. Adaptive Boosting </a>
+<li class="toc-entry toc-h2"><a href="#4.-Boosting">4. Boosting </a></li>
+<li class="toc-entry toc-h2"><a href="#5.-Adaptive-Boosting">5. Adaptive Boosting </a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#Algorithm">Algorithm </a></li>
 <li class="toc-entry toc-h3"><a href="#Implementation">Implementation </a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h2"><a href="#4.2-Gradient-Boosting">4.2 Gradient Boosting </a>
+<li class="toc-entry toc-h2"><a href="#6.-Gradient-Boosting">6. Gradient Boosting </a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#Algorithm">Algorithm </a></li>
 <li class="toc-entry toc-h3"><a href="#Implementation">Implementation </a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul><!--
@@ -209,9 +198,9 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="1.-Overview">
+<h2 id="1.-Overview">
 <a class="anchor" href="#1.-Overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>1. Overview<a class="anchor-link" href="#1.-Overview"> </a>
-</h1>
+</h2>
 <p>Classical Machine Learning algorithms are usually shown to be poor when handling real-world datasets. Models fit from these algorithms often suffer from two problems: high bias and high variance; such a model is called a <em>weak learner</em>. In this topic, we are going through some elegant techniques that combine multiple weak learners to form a powerful model, which produces an improved overall result. This is referred to generally as <a href="https://en.wikipedia.org/wiki/Ensemble_learning">Ensemble Learning</a>. Enemble Learning methods have proven their effectiveness in many Machine Learing competitions.</p>
 
 </div>
@@ -220,9 +209,9 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="1.1.-Big-picture">
-<a class="anchor" href="#1.1.-Big-picture" aria-hidden="true"><span class="octicon octicon-link"></span></a>1.1. Big picture<a class="anchor-link" href="#1.1.-Big-picture"> </a>
-</h2>
+<h3 id="Big-picture">
+<a class="anchor" href="#Big-picture" aria-hidden="true"><span class="octicon octicon-link"></span></a>Big picture<a class="anchor-link" href="#Big-picture"> </a>
+</h3>
 <ul>
 <li>Stacking (Wolpert, 1992)<ul>
 <li>Voting</li>
@@ -268,27 +257,18 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="1.2.-Bias-variance-analysis">
-<a class="anchor" href="#1.2.-Bias-variance-analysis" aria-hidden="true"><span class="octicon octicon-link"></span></a>1.2. Bias-variance analysis<a class="anchor-link" href="#1.2.-Bias-variance-analysis"> </a>
-</h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="2.-Stacking">
+<h2 id="2.-Stacking">
 <a class="anchor" href="#2.-Stacking" aria-hidden="true"><span class="octicon octicon-link"></span></a>2. Stacking<a class="anchor-link" href="#2.-Stacking"> </a>
-</h1>
+</h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="2.1.-Voting">
-<a class="anchor" href="#2.1.-Voting" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.1. Voting<a class="anchor-link" href="#2.1.-Voting"> </a>
-</h2>
+<h3 id="Voting">
+<a class="anchor" href="#Voting" aria-hidden="true"><span class="octicon octicon-link"></span></a>Voting<a class="anchor-link" href="#Voting"> </a>
+</h3>
 <p><a href="https://scikit-learn.org/stable/modules/ensemble.html#voting-classifier">Voting</a> (for classification) or <a href="https://scikit-learn.org/stable/modules/ensemble.html#voting-regressor">Averaging</a> (for regression) is the simplest ensembling method. When doing voting for classification, there are two strategies can be applied: marjority voting on predicted results (hard voting) and taking argmax of the weighted average of predicted probabilities (soft voting).</p>
 
 </div>
@@ -405,9 +385,9 @@ AUC = 0.9851 [VotingClassifier]
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="2.2.-Stacking">
-<a class="anchor" href="#2.2.-Stacking" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.2. Stacking<a class="anchor-link" href="#2.2.-Stacking"> </a>
-</h2>
+<h3 id="Stacking">
+<a class="anchor" href="#Stacking" aria-hidden="true"><span class="octicon octicon-link"></span></a>Stacking<a class="anchor-link" href="#Stacking"> </a>
+</h3>
 <p><a href="https://scikit-learn.org/stable/modules/ensemble.html#stacked-generalization">Stacking</a> technique organizes its members into two levels:</p>
 <ul>
 <li>Level 1, a number of <em>base models</em> is fit to ther dataset. Build a new dataset where the values predicted by base models are input variables while the output variable remains the same.</li>
@@ -538,18 +518,9 @@ AUC = 0.9891 [StackingClassifier]
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="2.3.-Blending">
-<a class="anchor" href="#2.3.-Blending" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.3. Blending<a class="anchor-link" href="#2.3.-Blending"> </a>
-</h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="3.-Bagging">
+<h2 id="3.-Bagging">
 <a class="anchor" href="#3.-Bagging" aria-hidden="true"><span class="octicon octicon-link"></span></a>3. Bagging<a class="anchor-link" href="#3.-Bagging"> </a>
-</h1>
+</h2>
 <p><a href="https://scikit-learn.org/stable/modules/ensemble.html#bagging-meta-estimator">Bootstrap Aggregating</a> (Bagging) uses averaging/voting method over a number of <em>homogeneous</em> weak models in order to reduce variance. Specifically, Bagging is divided into two parts: <a href="https://en.wikipedia.org/wiki/Bootstrapping_(statistics)">bootstrapping</a> and aggregating.</p>
 <ul>
 <li>Boostrapping: The entire dataset is performed random sampling with replacement on both rows and columns. This outputs a number of bootstraps where each of them is different from the others.</li>
@@ -563,9 +534,9 @@ AUC = 0.9891 [StackingClassifier]
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="3.1.-Random-Forest">
-<a class="anchor" href="#3.1.-Random-Forest" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.1. Random Forest<a class="anchor-link" href="#3.1.-Random-Forest"> </a>
-</h2>
+<h3 id="Random-Forest">
+<a class="anchor" href="#Random-Forest" aria-hidden="true"><span class="octicon octicon-link"></span></a>Random Forest<a class="anchor-link" href="#Random-Forest"> </a>
+</h3>
 <p><a href="https://en.wikipedia.org/wiki/Random_forest">Random Forest</a> is the implementation of Bagging method on Decision Trees. It can be easily parallelized, does not requires too much hyperparameters tuning and has a decent prediction power. Random Forest is a very popular algorithm, before Boosting methods take the crown.</p>
 <p><code style="font-size:13px"><a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html">RandomForestClassifier</a></code>
 and
@@ -586,9 +557,9 @@ classes have the following Bagging hyperparameters (ones inherited from Decision
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="3.2.-Extra-Trees">
-<a class="anchor" href="#3.2.-Extra-Trees" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.2. Extra Trees<a class="anchor-link" href="#3.2.-Extra-Trees"> </a>
-</h2>
+<h3 id="Extra-Trees">
+<a class="anchor" href="#Extra-Trees" aria-hidden="true"><span class="octicon octicon-link"></span></a>Extra Trees<a class="anchor-link" href="#Extra-Trees"> </a>
+</h3>
 <p>Besides Random Forest, Sickit-learn also develops a quite similar algorithm, Extremely Randomized Trees (Extra Trees for short). Instead of finding the split with highest information gain at each step, this method goes one step further in randomness by selecting the best candidate among a number of randomly-generated cut points.</p>
 <p>The 
 <code style="font-size:13px"><a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.ExtraTreesClassifier.html">ExtraTreesClassifier</a></code>
@@ -602,9 +573,9 @@ classes have same hyperparameters as in Random Forest, there are only some small
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="3.3.-Implementation">
-<a class="anchor" href="#3.3.-Implementation" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.3. Implementation<a class="anchor-link" href="#3.3.-Implementation"> </a>
-</h2>
+<h3 id="Implementation">
+<a class="anchor" href="#Implementation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Implementation<a class="anchor-link" href="#Implementation"> </a>
+</h3>
 </div>
 </div>
 </div>
@@ -718,9 +689,9 @@ AUC = 0.9749 [ExtraTreesClassifier]
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="4.-Boosting">
+<h2 id="4.-Boosting">
 <a class="anchor" href="#4.-Boosting" aria-hidden="true"><span class="octicon octicon-link"></span></a>4. Boosting<a class="anchor-link" href="#4.-Boosting"> </a>
-</h1>
+</h2>
 <p><a href="https://en.wikipedia.org/wiki/Boosting_(machine_learning)">Boosting</a> works in the same spirit as Bagging: it also build a group of <em>homogeneous</em> models to obtain a more powerful predictor. The difference is that Boosting trains weak models sequentially while Bagging perform the training independently. The idea behind Boosting is to fit models iteratively such that the training of each model depends on the previous ones. Using this strategy, badly handled observations in the earlier steps will be taken care better in the later steps. Since the Boosting method puts its efforts on important cases, we end up have a strong learner with lower bias.</p>
 <p>In many competitions, Boosting methods used on Decision Trees are so effective for tabular datasets and is widely used by top competitors. For the rest of this article, we will take a deep dive into a bunch of interesting Boosting algorithms. To start off, let's take a quick overview of two Boosting approaches, Adaptive Boosting and Gradient Boosting. They do both train trees consequently, but behave differently. We first denote: $\eta$ - the learning rate, $T$ - the number of iterations, $f^{(t)}$ and $f^{(t)}(\mathbf{X})$ - the tree number $t$ and its predicted value for $t=1,2,\dots,T$.</p>
 <p><em>Adaptive Boosting</em></p>
@@ -749,8 +720,8 @@ $\hat{\mathbf{y}}\leftarrow\eta f^{(1)}(\mathbf{X})+\eta f^{(2)}(\mathbf{X})+\do
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="4.1.-Adaptive-Boosting">
-<a class="anchor" href="#4.1.-Adaptive-Boosting" aria-hidden="true"><span class="octicon octicon-link"></span></a>4.1. Adaptive Boosting<a class="anchor-link" href="#4.1.-Adaptive-Boosting"> </a>
+<h2 id="5.-Adaptive-Boosting">
+<a class="anchor" href="#5.-Adaptive-Boosting" aria-hidden="true"><span class="octicon octicon-link"></span></a>5. Adaptive Boosting<a class="anchor-link" href="#5.-Adaptive-Boosting"> </a>
 </h2>
 <p><a href="https://en.wikipedia.org/wiki/AdaBoost">Adaptive Boosting</a> was originally designed for binary classification problems. This method can be used to boost any algorithm, but Decision Tree is always the go-to choice. More specifically, Decision Trees used here are very shallow, they only have one root and two leaves, explaining why they are also called Decision Stumps.</p>
 
@@ -984,8 +955,8 @@ have the following Boosting hyperparameters:</p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="4.2-Gradient-Boosting">
-<a class="anchor" href="#4.2-Gradient-Boosting" aria-hidden="true"><span class="octicon octicon-link"></span></a>4.2 Gradient Boosting<a class="anchor-link" href="#4.2-Gradient-Boosting"> </a>
+<h2 id="6.-Gradient-Boosting">
+<a class="anchor" href="#6.-Gradient-Boosting" aria-hidden="true"><span class="octicon octicon-link"></span></a>6. Gradient Boosting<a class="anchor-link" href="#6.-Gradient-Boosting"> </a>
 </h2>
 <p><a href="https://en.wikipedia.org/wiki/Gradient_boosting">Grandient Boosting</a> is another boosting strategy beside Adaptive Boosting. The idea of this method is mostly inspired by <a href="https://en.wikipedia.org/wiki/Gradient_descent">Gradient Descent</a>, thus the name Gradient Boosting. Just like other ensembling methods, this algorithm works best on Decision Trees and becomes the foundation for its modern variants such as XGBoost, LightGBM and CatBoost.</p>
 <p>Gradient Boosting Trees was originally designed for regression problems. For classification, we use regression approach to predict <a href="https://en.wikipedia.org/wiki/Logit">log of the odds</a>.</p>
@@ -1024,11 +995,11 @@ $$\hat{\mathbf{y}}^{(0)}=\arg\min\sum_{n=1}^N \mathcal{L}(\hat{y}_n)$$
 <p>Use first-order <a href="https://en.wikipedia.org/wiki/Taylor_series">Taylor approximation</a>: $f(x=a)\approx f(a)+f'(a)(x-a)$ to estimate the loss function evaluated at step $t-1$. Here, $x$ corresponds to $\hat{y}_n^{(t-1)}+f(\mathbf{s}_n)$ and $a$ corresponds to $\hat{y}_n^{(t-1)}$. Using the notation $g_n^{(t)}$ defined earlier, we have:
 $\mathcal{L}\left(\hat{y}_n^{(t-1)}+f(\mathbf{s}_n)\right)\approx\mathcal{L}\left(\hat{y}_n^{(t-1)}\right)+g_n^{(t)}f(\mathbf{s}_n)$.
 We can prove that $f^{(t)}(\mathbf{X})$ is proportional to the negative gradient as follows. When MSE is chosen, is simply computes the average residual in each leaf.</p>
-<p>$$\begin{align}
+<p>$$\begin{align*}
 f^{(t)}(\mathbf{X})
 &amp;\approx \underset{f}{\arg\min} \sum_{n=1}^{N}\mathcal{L}\left(\hat{y}_n^{(t-1)}\right)+g_n^{(t)}f(\mathbf{s}_n) \\
 &amp;= \underset{f}{\arg\min} \sum_{n=1}^{N}g_n^{(t)}f(\mathbf{s}_n) \propto -g_n^{(t)}
-\end{align}$$</p>
+\end{align*}$$</p>
 </li>
 <li>
 <p>Compute the predicted value up to the current step, $\hat{\mathbf{y}}^{(t)}$. Since we are adding negative gradient $-g_n^{(t-1)}$ scaled by the learning rate $\eta$ step-by-step, this can be considered a Gradient Descent process.</p>
@@ -1157,15 +1128,6 @@ AUC = 0.9831 [HistGradientBoostingClassifier]
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<hr>
-<p><em>♥ By Quang Hung x Thuy Linh ♥</em></p>
-
-</div>
-</div>
-</div>
 </div>
 
 
@@ -1178,7 +1140,7 @@ AUC = 0.9831 [HistGradientBoostingClassifier]
         theme="github-light"
         crossorigin="anonymous"
         async>
-</script><a class="u-url" href="/data-science-blog/jupyter/machine-learning/ensemble-learning/decision-tree/bagging/boosting/stacking/2022/08/24/ensemble-learning.html" hidden></a>
+</script><a class="u-url" href="/data-science-blog/machine-learning/ensemble-learning/decision-tree/bagging/boosting/2022/08/24/ensemble-learning.html" hidden></a>
 </article>
 
       </div>
