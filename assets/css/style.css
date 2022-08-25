@@ -441,7 +441,7 @@ pre code { font-size: 13px !important; }
 
 .input_area pre { border-left: 1px solid lightcoral; }
 
-.output_area pre { border-left: 1px solid grey; margin-left: 1rem !important; font-size: 16px; }
+.output_area pre { border-left: 1px solid grey; margin-left: 1rem !important; font-size: 13px; }
 
 .code_cell table { width: auto; }
 
@@ -480,6 +480,6 @@ pre code { font-size: 13px !important; }
 
 .highlight .gd { color: #ff5555; }
 
-p code { font-size: 16px; }
+p code { font-size: 13px; }
 
 /*# sourceMappingURL=style.css.map */
